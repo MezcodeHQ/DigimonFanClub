@@ -5,6 +5,11 @@
             --digi-green: #00c896;
             --digi-purple: #9c27b0;
         }
+.digimon-image-preview {
+    display: none;
+    max-width: 200px;
+    margin-top: 1rem;
+}
 
         body {
             font-family: 'Roboto', sans-serif;
