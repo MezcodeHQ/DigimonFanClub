@@ -1640,6 +1640,27 @@
                 loadDigimonShowcase(currentFilters);
             });
 
+    document.getElementById("digimon-image").addEventListener("change", function (event) {
+        const file = event.target.files[0];
+        const preview = document.getElementById("digimon-image-preview");
+
+        if (file && (file.type === "image/jpeg" || file.type === "image/png")) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                preview.src = e.target.result;
+                preview.style.display = "block"; // make sure it's visible
+                preview.style.maxWidth = "200px";
+                preview.style.marginTop = "10px";
+            };
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = "";
+            preview.style.display = "none";
+        }
+    });
+
+
+
            
     // Handle section switching
     const navLinks = document.querySelectorAll('.nav-link, .digi-btn');
