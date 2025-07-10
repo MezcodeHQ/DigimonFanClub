@@ -1,0 +1,307 @@
+:root {
+            --digi-blue: #00a8e8;
+            --digi-orange: #ff9a00;
+            --digi-red: #e83b3b;
+            --digi-green: #00c896;
+            --digi-purple: #9c27b0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .digi-font {
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        .digi-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .digi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .level-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .in-training { background-color: #8bc34a; color: white; }
+        .rookie { background-color: #2196f3; color: white; }
+        .champion { background-color: #ff9800; color: white; }
+        .ultimate { background-color: #e91e63; color: white; }
+        .mega { background-color: #9c27b0; color: white; }
+
+        .common { border-left: 5px solid #607d8b; }
+        .rare { border-left: 5px solid #ffc107; }
+        .legendary { border-left: 5px solid #f44336; }
+
+        .evolution-tree {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .evolution-stage {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .evolution-line {
+            width: 2px;
+            height: 50px;
+            background-color: var(--digi-blue);
+            margin: 10px 0;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow: auto;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            animation: modalFadeIn 0.3s;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: black;
+        }
+
+          .form-section {
+        display: none;
+    }
+    .form-section.active {
+        display: block;
+        animation: fadeIn 0.5s;
+    }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .input-error {
+            border-color: #e74c3c !important;
+        }
+
+        .input-success {
+            border-color: #2ecc71 !important;
+        }
+
+        .progress-bar {
+            height: 5px;
+            background-color: #e0e0e0;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: var(--digi-blue);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .tab {
+            display: inline-block;
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #e0e0e0;
+            border-radius: 5px 5px 0 0;
+            margin-right: 5px;
+        }
+
+        .tab.active {
+            background-color: var(--digi-blue);
+            color: white;
+        }
+
+        .element-tag {
+            display: inline-block;
+            padding: 3px 8px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .fire { background-color: #ff5722; color: white; }
+        .water { background-color: #2196f3; color: white; }
+        .earth { background-color: #795548; color: white; }
+        .light { background-color: #ffeb3b; color: black; }
+        .dark { background-color: #607d8b; color: white; }
+        .electric { background-color: #ffc107; color: black; }
+        .plant { background-color: #4caf50; color: white; }
+        .ice { background-color: #00bcd4; color: white; }
+        .wind { background-color: #8bc34a; color: white; }
+        .metal { background-color: #9e9e9e; color: white; }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--digi-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .digi-btn {
+            background-color: var(--digi-blue);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .digi-btn:hover {
+            background-color: #0088c7;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .digi-btn-secondary {
+            background-color: var(--digi-orange);
+        }
+
+        .digi-btn-secondary:hover {
+            background-color: #e68a00;
+        }
+
+        .digi-btn-danger {
+            background-color: var(--digi-red);
+        }
+
+        .digi-btn-danger:hover {
+            background-color: #d32f2f;
+        }
+
+        .avatar-preview {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ddd;
+            display: none;
+        }
+
+        .digimon-image-preview {
+            max-width: 200px;
+            max-height: 200px;
+            display: none;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .loading-spinner {
+            display: none;
+            width: 40px;
+            height: 40px;
+            margin: 20px auto;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--digi-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
